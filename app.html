@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medsafe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            align-items: center;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px 20px;
+        }
+        .title {
+            font-size: 24px;
+            margin-right: 20px;
+            transition: font-size 0.3s ease, color 0.3s ease;
+        }
+        .title:hover {
+            font-size: 28px;
+            color: #007bff;
+        }
+        .subtabs {
+            display: flex;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-radius: 0 0 10px 10px;
+        }
+        .subtab {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-size: 14px;
+            color: #000000;
+            transition: font-size 0.3s ease, color 0.3s ease;
+        }
+        .subtab:hover {
+            font-size:18px;
+            color: #007bff;
+            background-color:#ffffff ;
+        }
+        .content {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">Medsafe</h1>
+        <div class="subtabs">
+            <div class="subtab" onclick="openPage('dashboard')">Dashboard</div>
+            <div class="subtab" onclick="openPage('calendar')">Calendar</div>
+            <div class="subtab" onclick="openPage('medicines')">Medicines</div>
+            <div class="subtab" onclick="openPage('virtual')">Virtual Consultation</div>
+            <div class="subtab" onclick="openPage('diet')">Diet and Exercise</div>
+        </div>
+    </div>
+    <div class="content" id="pageContent">
+        <!-- Page content will be loaded here -->
+    </div>
+
+    <script>
+        function openPage(pageName) {
+            const content = document.getElementById('pageContent');
+            switch (pageName) {
+                case 'dashboard':
+                    content.innerHTML = `
+                        <h2>Dashboard</h2>
+                        <p>Add your dashboard code here.</p>
+                    `;
+                    break;
+                case 'calendar':
+                    content.innerHTML = `
+                        <h2>Calendar</h2>
+                        <p>Add your calendar code here.</p>
+                    `;
+                    break;
+                case 'medicines':
+                    content.innerHTML = `
+                        <h2>Medicines</h2>
+                        <p>Add your medicines code here.</p>
+                    `;
+                    break;
+                case 'virtual':
+                    content.innerHTML = `
+                        <h2>Virtual Consultation</h2>
+                        <p>Add your virtual consultation code here.</p>
+                    `;
+                    break;
+                case 'diet':
+                    content.innerHTML = `
+                        <h2>Diet and Exercise</h2>
+                        <p>Add your diet and exercise code here.</p>
+                    `;
+                    break;
+                default:
+                    content.innerHTML = '';
+            }
+        }
+    </script>
+</body>
+</html>
